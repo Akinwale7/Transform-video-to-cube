@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <!--css file for the fluidity of the video-->
+    <link rel="stylesheet" href="css/cube_video.css">
+    <!--css file for turning the video to a cube-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script>
+        //This hides the cube at the initial page load
+        $(document).ready(function () {
+            $(".container").hide();
+        });
+    </script>
+</head>
+
+<body>
+    <!--background video starts here-->
+    <div class="background-wrap">
+        <video id="videoId" width="100%" autoplay loop muted="muted">
+            <source src="vid.webm" type="video/webm">
+            <source src="vid.mp4" type="video/mp4"> </video>
+    </div>
+    <!--background video ends here-->
+    
+    <!-- formation of cube starts here-->
+    <div class="space" style="width:800px;height:600px; background:transparent; margin: 20 auto ">
+        <section class="container">
+            <section class="inner" id="target">
+                <video id="vid1_time" class="top" autoplay loop muted="muted">
+                    <source src="vid.webm">
+                    <source src="vid.mp4" type="video/mp4"> </video>
+                <video id="vid2_time" class="bottom" autoplay loop muted="muted">
+                    <source src="vid.webm">
+                    <source src="vid.mp4" type="video/mp4"> </video>
+                <video id="vid3_time" class="left" autoplay loop muted="muted">
+                    <source src="vid.webm">
+                    <source src="vid.mp4" type="video/mp4"> </video>
+                <video id="vid4_time" class="right" autoplay loop muted="muted">
+                    <source src="vid.webm">
+                    <source src="vid.mp4" type="video/mp4"> </video>
+                <video id="vid5_time" class="front" autoplay loop muted="muted">
+                    <source src="vid.webm">
+                    <source src="vid.mp4" type="video/mp4"> </video>
+                <video id="vid6_time" class="back" autoplay loop muted="muted">
+                    <source src="vid.webm">
+                    <source src="vid.mp4" type="video/mp4"> </video>
+            </section> <span class="output" style="position: absolute; z-index:-100; color:; top:0; display:none; "></span> </section>
+    </div>
+    <!--cube ends here-->
+    
+    <script>
+        document.addEventListener("click", function () {
+            $('.background-wrap').fadeOut(300);
+            $('.container').fadeIn(5000);
+        });
+    </script>
+    <script src="js/cube_video.js"></script>
+    <script src="js/cube_tilt.js"></script>
+</body>
+
+</html>
